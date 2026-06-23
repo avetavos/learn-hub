@@ -61,6 +61,10 @@
   .card h3 .emoji { margin-right: .4rem; }
   .card p { margin: 0 0 .8rem; color: var(--muted); font-size: .9rem; flex: 1; }
   .card .tag { align-self: flex-start; font-size: .72rem; color: var(--g, var(--accent)); border: 1px solid var(--border); background: var(--tag); border-radius: 6px; padding: .15rem .5rem; margin-bottom: .85rem; }
+  .level { align-self: flex-start; font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .12rem .5rem; border-radius: 999px; border: 1px solid; margin: 0 0 .6rem; }
+  .level--beginner { color: #7ee787; border-color: #2ea043; background: rgba(46,160,67,0.14); }
+  .level--intermediate { color: #e3b341; border-color: #9e6a03; background: rgba(210,153,34,0.14); }
+  .level--advanced { color: #ff7b72; border-color: #da3633; background: rgba(218,54,51,0.14); }
   .card .links { display: flex; gap: .5rem; }
   .card .links a {
     text-decoration: none; font-size: .85rem; font-weight: 600;
@@ -96,6 +100,7 @@
       <div class="grid">
         <article class="card" style="--g:#00ADD8">
           <h3><span class="emoji">🐹</span>Go Deep Dive</h3>
+          <span class="level level--intermediate">Intermediate</span>
           <p>Syntax, types, methods &amp; interfaces, concurrency, errors &amp; generics, stdlib, testing.</p>
           <span class="tag">Runs Go in-browser · yaegi→WASM</span>
           <div class="links">
@@ -105,6 +110,7 @@
         </article>
         <article class="card" style="--g:#83CD29">
           <h3><span class="emoji">🟢</span>Node.js Deep Dive</h3>
+          <span class="level level--intermediate">Intermediate</span>
           <p>JS essentials, the event loop &amp; async, core APIs, streams, HTTP, modules &amp; npm, testing.</p>
           <span class="tag">In-browser JS + StackBlitz</span>
           <div class="links">
@@ -114,6 +120,7 @@
         </article>
         <article class="card" style="--g:#FFD43B">
           <h3><span class="emoji">🐍</span>Python Deep Dive</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>Syntax, data structures, the data model, functions, typing, async, stdlib &amp; tooling.</p>
           <span class="tag">Runs Python in-browser · Pyodide</span>
           <div class="links">
@@ -123,6 +130,7 @@
         </article>
         <article class="card" style="--g:#CE422B">
           <h3><span class="emoji">🦀</span>Rust Deep Dive</h3>
+          <span class="level level--advanced">Advanced</span>
           <p>Ownership &amp; borrowing, structs/enums/matching, traits &amp; generics, errors, concurrency.</p>
           <span class="tag">Runs Rust in-browser · Rust Playground</span>
           <div class="links">
@@ -139,6 +147,7 @@
       <div class="grid">
         <article class="card" style="--g:#00ADD8">
           <h3><span class="emoji">🐹</span>Go for TypeScript Developers</h3>
+          <span class="level level--intermediate">Intermediate</span>
           <p>Go 101, concurrency, and building an API service with Echo — framed against TypeScript.</p>
           <span class="tag">Runs Go in-browser · yaegi→WASM</span>
           <div class="links">
@@ -148,6 +157,7 @@
         </article>
         <article class="card" style="--g:#FFD43B">
           <h3><span class="emoji">🐍</span>Python for TypeScript Developers</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>Python fundamentals and a FastAPI service — mapped from TypeScript concepts.</p>
           <span class="tag">Runs Python in-browser · Pyodide</span>
           <div class="links">
@@ -157,6 +167,7 @@
         </article>
         <article class="card" style="--g:#CE422B">
           <h3><span class="emoji">🦀</span>Rust for TypeScript Developers</h3>
+          <span class="level level--advanced">Advanced</span>
           <p>Rust fundamentals and an Axum API service — compared to TypeScript throughout.</p>
           <span class="tag">Runs Rust in-browser · Rust Playground</span>
           <div class="links">
@@ -173,6 +184,7 @@
       <div class="grid">
         <article class="card" style="--g:#02569B">
           <h3><span class="emoji">🐦</span>Flutter for React Developers</h3>
+          <span class="level level--intermediate">Intermediate</span>
           <p>Widgets, state &amp; lifecycle, navigation, and data — mapped from React.</p>
           <span class="tag">Open in DartPad</span>
           <div class="links">
@@ -182,6 +194,7 @@
         </article>
         <article class="card" style="--g:#FF3E00">
           <h3><span class="emoji">🔥</span>Svelte for React Developers</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>Svelte 5 runes vs hooks, components &amp; templating, stores, SvelteKit.</p>
           <span class="tag">Live in-browser Svelte compile</span>
           <div class="links">
@@ -191,6 +204,7 @@
         </article>
         <article class="card" style="--g:#BC52EE">
           <h3><span class="emoji">🚀</span>Astro for React Developers</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>.astro components, islands &amp; using React in Astro, routing, content collections.</p>
           <span class="tag">Open in StackBlitz</span>
           <div class="links">
@@ -207,6 +221,7 @@
       <div class="grid">
         <article class="card" style="--g:#e8649b">
           <h3><span class="emoji">🎨</span>Web for Designers</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>HTML, CSS, and a little JavaScript — taught from the ground up, with a live editor.</p>
           <span class="tag">Live HTML/CSS/JS preview</span>
           <div class="links">
@@ -223,6 +238,7 @@
       <div class="grid">
         <article class="card" style="--g:#2496ED">
           <h3><span class="emoji">🐳</span>Docker — From Zero to Hero</h3>
+          <span class="level level--beginner">Beginner</span>
           <p>Images &amp; Dockerfiles, containers, volumes, networking, Compose, optimization, registry &amp; CI/CD.</p>
           <span class="tag">Code + output · Play with Docker</span>
           <div class="links">
@@ -232,6 +248,7 @@
         </article>
         <article class="card" style="--g:#DC382D">
           <h3><span class="emoji">🟥</span>Redis — From Zero to Hero</h3>
+          <span class="level level--intermediate">Intermediate</span>
           <p>Keys &amp; strings, lists/hashes/sets/sorted sets, pub/sub &amp; streams, persistence, caching/rate-limit/locks, Lua.</p>
           <span class="tag">Gifted Docker script · redis-cli</span>
           <div class="links">
