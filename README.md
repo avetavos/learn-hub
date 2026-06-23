@@ -14,6 +14,7 @@ A single static landing page that links all 11 interactive technology courses â€
 **For TypeScript Developers** (backend, comparison-first): Go, Python, Rust.
 **For React Developers**: Flutter, Svelte, Astro.
 **For Designers**: Web for Designers.
+**DevOps & Tooling**: Docker â€” From Zero to Hero.
 
 ## Deployment
 
