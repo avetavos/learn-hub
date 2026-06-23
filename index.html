@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learn Hub — Interactive technology courses</title>
+<meta name="description" content="A collection of interactive, bilingual (EN/ไทย) courses to learn programming languages and web technology — with runnable code in the browser." />
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1c2330;
+    --border: #283041;
+    --text: #e6edf3;
+    --muted: #9aa7b6;
+    --accent: #6ea8fe;
+    --tag: #2a3242;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+  header.hero {
+    padding: 4rem 0 2.5rem;
+    text-align: center;
+    background:
+      radial-gradient(1200px 400px at 50% -120px, rgba(110,168,254,0.18), transparent 70%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 .5rem; letter-spacing: -0.02em; }
+  .hero p { color: var(--muted); max-width: 42rem; margin: 0 auto; font-size: 1.05rem; }
+  .hero .chips { margin-top: 1.25rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+  .chip { font-size: .78rem; color: var(--muted); background: var(--tag); border: 1px solid var(--border); border-radius: 999px; padding: .25rem .7rem; }
+
+  main { padding: 2.5rem 0 4rem; }
+  section { margin-top: 2.5rem; }
+  section h2 { font-size: 1.2rem; margin: 0 0 .25rem; display: flex; align-items: baseline; gap: .6rem; }
+  section h2 .count { font-size: .8rem; color: var(--muted); font-weight: 400; }
+  section > p.sub { color: var(--muted); margin: 0 0 1.1rem; font-size: .92rem; }
+  section.group { border-left: 3px solid var(--g, var(--accent)); padding-left: 1rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .card {
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.1rem 1rem;
+    display: flex; flex-direction: column;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover { border-color: var(--g, var(--accent)); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
+  .card h3 .emoji { margin-right: .4rem; }
+  .card p { margin: 0 0 .8rem; color: var(--muted); font-size: .9rem; flex: 1; }
+  .card .tag { align-self: flex-start; font-size: .72rem; color: var(--g, var(--accent)); border: 1px solid var(--border); background: var(--tag); border-radius: 6px; padding: .15rem .5rem; margin-bottom: .85rem; }
+  .card .links { display: flex; gap: .5rem; }
+  .card .links a {
+    text-decoration: none; font-size: .85rem; font-weight: 600;
+    padding: .4rem .7rem; border-radius: 7px; border: 1px solid var(--border);
+  }
+  .card .links a.primary { background: var(--g, var(--accent)); color: #0b0f14; border-color: transparent; }
+  .card .links a.secondary { color: var(--muted); }
+  .card .links a.secondary:hover { color: var(--text); }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 0 3rem; text-align: center; color: var(--muted); font-size: .88rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Learn Hub</h1>
+      <p>Interactive, bilingual (English / ไทย) courses for learning programming languages and web technology — every example runs right in your browser.</p>
+      <div class="chips">
+        <span class="chip">11 courses</span>
+        <span class="chip">Runnable code</span>
+        <span class="chip">EN / ไทย</span>
+        <span class="chip">Quizzes &amp; saved progress</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="group" style="--g:#d9913b">
+      <h2>Language Deep Dives <span class="count">— master the language itself</span></h2>
+      <p class="sub">Standalone, language-core courses. Deep fluency in the language and its runtime, before any framework.</p>
+      <div class="grid">
+        <article class="card" style="--g:#00ADD8">
+          <h3><span class="emoji">🐹</span>Go Deep Dive</h3>
+          <p>Syntax, types, methods &amp; interfaces, concurrency, errors &amp; generics, stdlib, testing.</p>
+          <span class="tag">Runs Go in-browser · yaegi→WASM</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/go-deep-dive/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/go-deep-dive">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#83CD29">
+          <h3><span class="emoji">🟢</span>Node.js Deep Dive</h3>
+          <p>JS essentials, the event loop &amp; async, core APIs, streams, HTTP, modules &amp; npm, testing.</p>
+          <span class="tag">In-browser JS + StackBlitz</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/nodejs-deep-dive/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/nodejs-deep-dive">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#FFD43B">
+          <h3><span class="emoji">🐍</span>Python Deep Dive</h3>
+          <p>Syntax, data structures, the data model, functions, typing, async, stdlib &amp; tooling.</p>
+          <span class="tag">Runs Python in-browser · Pyodide</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/python-deep-dive/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/python-deep-dive">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#CE422B">
+          <h3><span class="emoji">🦀</span>Rust Deep Dive</h3>
+          <p>Ownership &amp; borrowing, structs/enums/matching, traits &amp; generics, errors, concurrency.</p>
+          <span class="tag">Runs Rust in-browser · Rust Playground</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/rust-deep-dive/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/rust-deep-dive">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="group" style="--g:#3178c6">
+      <h2>For TypeScript Developers <span class="count">— backend, comparison-first</span></h2>
+      <p class="sub">Learn a backend language by mapping it to the TypeScript you already know.</p>
+      <div class="grid">
+        <article class="card" style="--g:#00ADD8">
+          <h3><span class="emoji">🐹</span>Go for TypeScript Developers</h3>
+          <p>Go 101, concurrency, and building an API service with Echo — framed against TypeScript.</p>
+          <span class="tag">Runs Go in-browser · yaegi→WASM</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/go-for-typescript-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/go-for-typescript-developers">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#FFD43B">
+          <h3><span class="emoji">🐍</span>Python for TypeScript Developers</h3>
+          <p>Python fundamentals and a FastAPI service — mapped from TypeScript concepts.</p>
+          <span class="tag">Runs Python in-browser · Pyodide</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/python-for-typescript-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/python-for-typescript-developers">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#CE422B">
+          <h3><span class="emoji">🦀</span>Rust for TypeScript Developers</h3>
+          <p>Rust fundamentals and an Axum API service — compared to TypeScript throughout.</p>
+          <span class="tag">Runs Rust in-browser · Rust Playground</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/rust-for-typescript-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/rust-for-typescript-developers">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="group" style="--g:#61dafb">
+      <h2>For React Developers <span class="count">— transfer what you know</span></h2>
+      <p class="sub">Comparison-first courses that map React concepts to a new framework.</p>
+      <div class="grid">
+        <article class="card" style="--g:#02569B">
+          <h3><span class="emoji">🐦</span>Flutter for React Developers</h3>
+          <p>Widgets, state &amp; lifecycle, navigation, and data — mapped from React.</p>
+          <span class="tag">Open in DartPad</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/flutter-for-react-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/flutter-for-react-developers">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#FF3E00">
+          <h3><span class="emoji">🔥</span>Svelte for React Developers</h3>
+          <p>Svelte 5 runes vs hooks, components &amp; templating, stores, SvelteKit.</p>
+          <span class="tag">Live in-browser Svelte compile</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/svelte-for-react-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/svelte-for-react-developers">GitHub</a>
+          </div>
+        </article>
+        <article class="card" style="--g:#BC52EE">
+          <h3><span class="emoji">🚀</span>Astro for React Developers</h3>
+          <p>.astro components, islands &amp; using React in Astro, routing, content collections.</p>
+          <span class="tag">Open in StackBlitz</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/astro-for-react-developers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/astro-for-react-developers">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="group" style="--g:#e8649b">
+      <h2>For Designers <span class="count">— start from zero</span></h2>
+      <p class="sub">Web technology for UI designers with no programming background.</p>
+      <div class="grid">
+        <article class="card" style="--g:#e8649b">
+          <h3><span class="emoji">🎨</span>Web for Designers</h3>
+          <p>HTML, CSS, and a little JavaScript — taught from the ground up, with a live editor.</p>
+          <span class="tag">Live HTML/CSS/JS preview</span>
+          <div class="links">
+            <a class="primary" href="https://avetavos.github.io/web-for-designers/">Open course</a>
+            <a class="secondary" href="https://github.com/avetavos/web-for-designers">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Built with Astro + Starlight · runnable code in the browser · English &amp; ไทย<br />
+      <a href="https://github.com/avetavos">github.com/avetavos</a>
+    </div>
+  </footer>
+</body>
+</html>
