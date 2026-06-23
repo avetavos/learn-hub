@@ -15,6 +15,7 @@ A single static landing page that links all 11 interactive technology courses �
 **For React Developers**: Flutter, Svelte, Astro.
 **For Designers**: Web for Designers.
 **DevOps & Tooling**: Docker — From Zero to Hero.
+**Databases**: Redis — From Zero to Hero.
 
 ## Deployment
 
