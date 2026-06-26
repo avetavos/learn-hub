@@ -77,6 +77,15 @@
   footer { border-top: 1px solid var(--border); margin-top: 2rem; padding: 3rem 0 3rem; text-align: center; color: var(--muted); font-size: .88rem; }
   footer a { color: var(--accent); text-decoration: none; }
 </style>
+<link rel="manifest" href="/learn-hub/manifest.webmanifest" />
+<link rel="apple-touch-icon" href="/learn-hub/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/learn-hub/icon-192.png" />
+<meta name="theme-color" content="#6ea8fe" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Learn Hub" />
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/learn-hub/sw.js',{scope:'/learn-hub/'}).catch(function(){})})}</script>
 </head>
 <body>
   <header class="hero">
