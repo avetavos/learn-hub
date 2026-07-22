@@ -70,3 +70,7 @@ html.read-mode .readmode-toggle {
   color: var(--sl-color-text);
   border-color: var(--paper-code-border);
 }
+/* Keep content clear of the sticky header (base read-mode zeroed it) */
+html.read-mode .main-frame {
+  padding-top: var(--sl-nav-height, 3.5rem) !important;
+}
