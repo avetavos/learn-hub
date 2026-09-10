@@ -10,7 +10,7 @@ GROUP="${1:?usage: deploy-group.sh <group>}"
 case "$GROUP" in
   deep-dive) MEMBERS="astro-deep-dive datadog-deep-dive flutter-deep-dive go-deep-dive kafka-deep-dive kubernetes-deep-dive nextjs-deep-dive nodejs-deep-dive python-deep-dive react-deep-dive rust-deep-dive supabase-deep-dive svelte-deep-dive terraform-terragrunt-aws-deep-dive terraform-terragrunt-azure-deep-dive terraform-terragrunt-gcp-deep-dive typescript-deep-dive";;
   devops-tools) MEMBERS="docker-from-zero-to-hero growthbook-from-zero-to-hero keycloak-from-zero-to-hero rabbitmq-from-zero-to-hero redis-from-zero-to-hero";;
-  software-design) MEMBERS="design-patterns-from-zero-to-hero graphql-design-from-zero-to-hero grpc-design-from-zero-to-hero microservices-design-from-zero-to-hero refactoring-from-zero-to-hero rest-api-design-from-zero-to-hero websocket-design-from-zero-to-hero";;
+  software-design) MEMBERS="design-patterns-from-zero-to-hero graphql-design-from-zero-to-hero grpc-design-from-zero-to-hero mcp-design-from-zero-to-hero microservices-design-from-zero-to-hero refactoring-from-zero-to-hero rest-api-design-from-zero-to-hero websocket-design-from-zero-to-hero";;
   databases) MEMBERS="mongodb-from-zero-to-hero postgresql-from-zero-to-hero";;
   for-typescript-developers) MEMBERS="go-for-typescript-developers python-for-typescript-developers rust-for-typescript-developers";;
   for-react-developers) MEMBERS="astro-for-react-developers flutter-for-react-developers svelte-for-react-developers";;
