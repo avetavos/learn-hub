@@ -31,5 +31,10 @@ for repo in $MEMBERS; do
 done
 echo "==== stripping files over the 25 MiB Pages limit:"
 find "$STAGE" -type f -size +25M -print -delete
-( cd "$ROOT/learn-hub" \
-  && npx wrangler pages deploy "$STAGE" --project-name="$GROUP" --branch=main --commit-dirty=true )
+# Pages Functions (e.g. the Go playground compile proxy) for groups that host Go courses.
+case "$GROUP" in
+  deep-dive|for-typescript-developers) rm -rf "$STAGE/functions"; cp -R "$ROOT/learn-hub/tools/functions" "$STAGE/functions";;
+esac
+# wrangler picks up ./functions relative to the cwd, so deploy from inside the stage dir.
+( cd "$STAGE" \
+  && npx wrangler pages deploy . --project-name="$GROUP" --branch="${BRANCH:-main}" --commit-dirty=true )
