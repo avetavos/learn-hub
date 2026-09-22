@@ -22,12 +22,15 @@ STAGE="$ROOT/learn-hub/.pages-stage/$GROUP"
 rm -rf "$STAGE"; mkdir -p "$STAGE"
 for repo in $MEMBERS; do
   echo "==== build $repo"
-  ( cd "$ROOT/$repo" && npm run build )
-  base="$(grep -oE "base: '[^']+'" "$ROOT/$repo/astro.config.mjs" | cut -d"'" -f2 || true)"
+  # DEPLOY_DIR_<repo_with_underscores>=/path builds that checkout instead (e.g. a main worktree
+  # while the repo's working tree sits on a feature branch).
+  ov="DEPLOY_DIR_${repo//-/_}"; dir="${!ov:-$ROOT/$repo}"
+  ( cd "$dir" && npm run build )
+  base="$(grep -oE "base: '[^']+'" "$dir/astro.config.mjs" | cut -d"'" -f2 || true)"
   base="${base#/}"
   dest="$STAGE${base:+/$base}"
   mkdir -p "$dest"
-  cp -R "$ROOT/$repo/dist/." "$dest/"
+  cp -R "$dir/dist/." "$dest/"
 done
 echo "==== stripping files over the 25 MiB Pages limit:"
 find "$STAGE" -type f -size +25M -print -delete
