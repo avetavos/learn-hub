@@ -9,7 +9,8 @@ import glob, os, re, sys
 
 def check(repo):
     cfg = open(os.path.join(repo, 'astro.config.mjs')).read()
-    base = re.search(r"base:\s*'([^']+)'", cfg).group(1)
+    m = re.search(r"base:\s*'([^']+)'", cfg)
+    base = (m.group(1) if m else '/').rstrip('/')  # '' when the course is served at the domain root
     dist = os.path.join(repo, 'dist')
     broken = {}
     for f in glob.glob(f'{dist}/**/*.html', recursive=True):
@@ -23,7 +24,7 @@ def check(repo):
                 ok = any(os.path.exists(os.path.join(dist, c)) for c in (rel, rel + '/index.html', rel.rstrip('/') + '.html'))
             if not ok:
                 broken.setdefault(href, []).append(os.path.relpath(f, dist))
-    print(f'{os.path.basename(repo.rstrip("/"))}: {len(broken)} broken internal hrefs (base {base})')
+    print(f'{os.path.basename(repo.rstrip("/"))}: {len(broken)} broken internal hrefs (base {base or "/"})')
     for href, pages in sorted(broken.items()):
         print(f'   {href}  <- {pages[0]}' + (f' (+{len(pages) - 1} more)' if len(pages) > 1 else ''))
     return not broken
