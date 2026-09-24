@@ -2,7 +2,7 @@
 """Check that every internal href in a course's built dist/ resolves to a page.
 
 Usage: tools/check-links.py <repo-dir> [<repo-dir> ...]   (run `npx astro build` in each first)
-Reads `base:` from the repo's astro.config.mjs; any href that starts with "/" must start with that base
+Only hrefs on real tags count (escaped markup shown inside <code> is ignored). Reads `base:` from the repo's astro.config.mjs; any href that starts with "/" must start with that base
 and point at an existing file/dir in dist/. Exit 1 if anything is broken.
 """
 import glob, os, re, sys
@@ -14,7 +14,7 @@ def check(repo):
     broken = {}
     for f in glob.glob(f'{dist}/**/*.html', recursive=True):
         html = open(f, errors='ignore').read()
-        for href in set(re.findall(r'href="(/[^"#?]*)', html)):
+        for href in set(re.findall(r'<[a-zA-Z][^<>]*?\shref="(/[^"#?]*)', html)):
             if href.startswith('/_') or href.startswith('/pagefind'):
                 continue
             ok = href in (base, base + '/') or href.startswith(base + '/')
