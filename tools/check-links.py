@@ -11,7 +11,7 @@ def other_bases(repo):
     # Courses in one deploy group share a domain, so "/nextjs/en/..." from the React course is a
     # cross-course link, not a broken one. ponytail: sibling repos = every ~/Develops/*/astro.config.mjs.
     out = set()
-    for cfg in glob.glob(os.path.join(os.path.dirname(os.path.abspath(repo.rstrip('/'))), '*', 'astro.config.mjs')):
+    for cfg in glob.glob(os.path.expanduser('~/Develops/*/astro.config.mjs')):  # worktrees build elsewhere
         m = re.search(r"base:\s*'([^']+)'", open(cfg).read())
         if m and m.group(1).rstrip('/'):
             out.add(m.group(1).rstrip('/'))
