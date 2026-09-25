@@ -2,7 +2,7 @@
 
 A single static landing page that links all 11 interactive technology courses — bilingual (EN/ไทย), with runnable code in the browser.
 
-**Live:** https://avetavos.github.io/learn-hub/
+**Live:** Cloudflare Worker `learn-hub` (learn-hub.avetavos.workers.dev, behind Cloudflare Access) — deploy with `npx wrangler deploy` from this directory
 
 ## What's here
 
@@ -19,4 +19,4 @@ A single static landing page that links all 11 interactive technology courses �
 
 ## Deployment
 
-Plain static HTML served by GitHub Pages from the `main` branch root (Settings → Pages → Source: Deploy from a branch → `main` / `/root`). No build step. To update, edit `index.html` and push.
+Plain static HTML served as Cloudflare Worker static assets (`wrangler.toml`, assets = this directory). No build step. To update, edit `index.html`, push, then run `npx wrangler deploy`. Course groups deploy separately via `tools/deploy-group.sh <group>` (stages under `~/Develops/.pages-stage/`, outside this repo).
