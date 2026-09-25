@@ -18,7 +18,7 @@ case "$GROUP" in
   web-for-designers) MEMBERS="web-for-designers";;
   *) echo "unknown group: $GROUP" >&2; exit 1;;
 esac
-STAGE="$ROOT/learn-hub/.pages-stage/$GROUP"
+STAGE="$ROOT/.pages-stage/$GROUP"  # outside the hub repo: the hub worker uploads its whole root as assets
 rm -rf "$STAGE"; mkdir -p "$STAGE"
 for repo in $MEMBERS; do
   echo "==== build $repo"
