@@ -1,9 +1,9 @@
-.git/
-.wrangler/
-.pages-stage/
-.qodo/
-.superpowers/
-graphify-out/
-tools/
+.git
+.wrangler
+.pages-stage
+.qodo
+.superpowers
+graphify-out
+tools
 wrangler.toml
 README.md
