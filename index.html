@@ -405,7 +405,7 @@
         <article class="card" style="--g:#7B42BC">
           <h3><span class="emoji">🏗️</span>Terraform &amp; Terragrunt for AWS — From Zero to Hero</h3>
           <span class="level level--advanced">Advanced</span>
-          <p>HCL, providers &amp; resources, state &amp; remote backends (S3 native locking), variables &amp; modules, multi-environment design, Terragrunt DRY configuration &amp; dependencies, and CI/CD &amp; policy as code — verified via context7.</p>
+          <p>HCL, providers &amp; resources with lifecycle, state &amp; remote backends (S3 native locking, force-unlock), variables with cross-variable validation, ephemeral &amp; write-only secrets, modules with terraform test mocks, multi-environment design, Terragrunt 1.1 (run --all, stacks, DAG), CI/CD with OIDC &amp; policy as code (tflint/checkov/conftest run for real), a How Terraform Works internals module, a Reading AI-generated Terraform module (23-bug catalog + 3 worked reviews) and a snippet harness — every claim proven on Terraform 1.16 with the aws 6.x provider.</p>
           <div class="links">
             <a class="primary" href="https://deep-dive.avetavos.com/terraform-aws/en/" target="_blank" rel="noopener">Open course</a>
             <a class="secondary" href="https://github.com/avetavos/terraform-terragrunt-aws-deep-dive">GitHub</a>
@@ -414,7 +414,7 @@
         <article class="card" style="--g:#7B42BC">
           <h3><span class="emoji">🏗️</span>Terraform &amp; Terragrunt for GCP — From Zero to Hero</h3>
           <span class="level level--advanced">Advanced</span>
-          <p>HCL, providers &amp; resources, state &amp; remote backends (GCS built-in locking), variables &amp; modules, multi-environment design (project-per-environment), Terragrunt DRY configuration &amp; dependencies, and CI/CD via Workload Identity Federation — verified via context7.</p>
+          <p>HCL, providers &amp; resources with lifecycle, state &amp; remote backends (GCS locking), variables with cross-variable validation, ephemeral &amp; write-only secrets, modules with terraform test mocks (terraform-google-modules v18), multi-environment design (project-per-environment, deletion_policy), Terragrunt 1.1 (run --all, stacks, DAG), CI/CD via Workload Identity Federation &amp; policy as code (tflint/checkov/conftest run for real), a How Terraform Works internals module, a Reading AI-generated Terraform module (23-bug catalog + 3 worked reviews) and a snippet harness — every claim proven on Terraform 1.16 with the google 8.x provider.</p>
           <div class="links">
             <a class="primary" href="https://deep-dive.avetavos.com/terraform-gcp/en/" target="_blank" rel="noopener">Open course</a>
             <a class="secondary" href="https://github.com/avetavos/terraform-terragrunt-gcp-deep-dive">GitHub</a>
@@ -423,7 +423,7 @@
         <article class="card" style="--g:#7B42BC">
           <h3><span class="emoji">🏗️</span>Terraform &amp; Terragrunt for Azure — From Zero to Hero</h3>
           <span class="level level--advanced">Advanced</span>
-          <p>HCL, providers &amp; resources, state &amp; remote backends (Azure Storage built-in locking), variables &amp; modules, multi-environment design (resource-group vs. subscription isolation), Terragrunt DRY configuration &amp; dependencies, and CI/CD via OIDC federated credentials — verified via context7.</p>
+          <p>HCL, providers &amp; resources with lifecycle, state &amp; remote backends (Azure Storage blob-lease locking), variables with cross-variable validation, ephemeral &amp; write-only secrets (Key Vault), modules with terraform test mocks (Azure Verified Modules), multi-environment design (resource-group vs. subscription isolation), Terragrunt 1.1 (run --all, stacks, DAG), CI/CD via OIDC federated credentials &amp; policy as code (tflint/checkov/conftest run for real), a How Terraform Works internals module, a Reading AI-generated Terraform module (23-bug catalog + 3 worked reviews) and a snippet harness — every claim proven on Terraform 1.16 with the azurerm 5.x provider.</p>
           <div class="links">
             <a class="primary" href="https://deep-dive.avetavos.com/terraform-azure/en/" target="_blank" rel="noopener">Open course</a>
             <a class="secondary" href="https://github.com/avetavos/terraform-terragrunt-azure-deep-dive">GitHub</a>
