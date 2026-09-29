@@ -387,7 +387,7 @@
         <article class="card" style="--g:#00A88F">
           <h3><span class="emoji">🌊</span>Kafka — From Zero to Hero</h3>
           <span class="level level--advanced">Advanced</span>
-          <p>The distributed log, topics &amp; partitions, producers (acks &amp; idempotence), consumer groups &amp; rebalancing (KIP-848), delivery semantics &amp; transactions, Streams/Connect/Schema Registry, and running Kafka in production — KRaft-only, no ZooKeeper.</p>
+          <p>The distributed log with real segment files, topics &amp; partitions (ISR shrink/expand on a 3-broker cluster, compaction proven with kafka-dump-log), producers (acks, idempotence, duplicates on retry proven), consumer groups &amp; rebalancing (classic vs KIP-848 measured), delivery semantics &amp; transactions (SIGKILL mid-transaction, zero duplicates), share groups (KIP-932), Streams/Connect/Schema Registry (TopologyTestDriver, real 409s), ACLs/SASL-SCRAM and tuning, a How Kafka Works internals module, a Reading AI-generated Kafka module (21-bug catalog + 3 worked reviews) and an in-browser TypeScript compile-check — every claim proven on Kafka 4.3.1, KRaft-only.</p>
           <div class="links">
             <a class="primary" href="https://deep-dive.avetavos.com/kafka/en/" target="_blank" rel="noopener">Open course</a>
             <a class="secondary" href="https://github.com/avetavos/kafka-deep-dive">GitHub</a>
